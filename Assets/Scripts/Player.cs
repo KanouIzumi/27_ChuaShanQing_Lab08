@@ -7,8 +7,6 @@ public class Player : MonoBehaviour
 {
     public float speed;
 
-   
-
     // Start is called before the first frame update
     void Start()
     {
@@ -22,20 +20,6 @@ public class Player : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
 
         transform.position = transform.position + new Vector3(0 , verticalInput * speed * Time.deltaTime, 0);
-
-      
-
-    }
-
-
-    private void OnCollisionEnter(Collision collision)
-    {
-
-        if (collision.gameObject.tag == "Block")
-        {
-            print("Hey");
-        }
-       
     }
 
 
@@ -46,7 +30,7 @@ public class Player : MonoBehaviour
         {
             print("GOT hit");
             //Destroy(collision.gameObject);
-            //SceneManager.LoadScene("GameLose");
+            SceneManager.LoadScene("GameLose");
         }
 
     }
