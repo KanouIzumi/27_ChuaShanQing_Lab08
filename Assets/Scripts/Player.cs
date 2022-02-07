@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     public float speed;
+
+   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,25 +35,18 @@ public class Player : MonoBehaviour
         {
             print("Hey");
         }
-         if (collision.gameObject.tag == "Obstacle")
-        {
-            print("GOT hit");
-            SceneManager.LoadScene("GameLose");
-        }
+       
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider collision)
     {
-        if (other.gameObject.tag == "Block")
-        {
-            print("Hey");
-        }
-
-        if (other.gameObject.tag == "Obstacle")
+      
+        if (collision.gameObject.tag == "Obstacle")
         {
             print("GOT hit");
-            SceneManager.LoadScene("GameLose");
+            //Destroy(collision.gameObject);
+            //SceneManager.LoadScene("GameLose");
         }
 
     }
