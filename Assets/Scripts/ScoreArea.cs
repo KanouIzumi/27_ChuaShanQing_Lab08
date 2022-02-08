@@ -23,9 +23,9 @@ public class ScoreArea : MonoBehaviour
      void OnTriggerEnter(Collider collision)
     {
 
+
         if (collision.gameObject.tag == "Obstacle")
         {
-            print("+1");
             score++;
             scoreText.text = "Score: " + score;
             Destroy(collision.gameObject);
